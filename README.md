@@ -1,7 +1,7 @@
 # 11ty-ghost-template
 A website template that uses 11ty as a frontend with Ghost running as a headless CMS. 
 
-&copy Mukund Shyam, 2025
+© Mukund Shyam, 2025
 
 This website pulls posts from a Ghost instance using the Ghost API, and structures it using 11ty and Liquid into pages. 
 It includes a number of useful pages: home, contact, about, gallery (for images), writing (posts), music. 
