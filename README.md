@@ -16,7 +16,8 @@ Overall, it's a basic template that can be modified to create your own website.
 1. [Install Ghost]([url](https://ghost.org/docs/install/)) and run it (either locally or on Ghost Pro).
 2. Obtain the correct API keys and add it to /src/_data/posts.js.
 3. Add images to the images folder (/src/images).
-5. Edit the layout files at /src/_includes.
-4. Add data to all the "text" pages: about, contact, index, music. Everything ending with .md.
-6. Optional: Edit the CSS to your liking (the CSS is at /src/_site/style).
-7. Deploy the website locally using `npm start`.
+4. Edit the layout files at /src/_includes.
+5. Edit the domain names in the post layout at /src/_includes/post.html
+6. Add data to all the "text" pages: about, contact, index, music. Everything ending with .md.
+7. Optional: Edit the CSS to your liking (the CSS is at /src/_site/style).
+8. Deploy the website locally using `npm start`.

@@ -3,6 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="{{ post.title }}">
+    <meta property="og:description" content="{{ post.excerpt }}">
+    <meta property="og:image" content="{{ post.feature_image }}">
+    <meta property="og:url" content="https://DOMAINNAME/posts/{{post.slug}}">
+    <meta property="og:type" content="website">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="{{ post.title }}">
+    <meta property="twitter:description" content="{{ post.excerpt }}">
+    <meta property="twitter:image" content="{{ post.feature_image }}">
+    <meta property="twitter:url" content="https://DOMAINNAME/posts/{{post.slug}}">
     <title>{{ post.title }}</title>
     <link href="/style/post-style.css" rel="stylesheet" />
     <link href="/assets/fav.PNG" rel="icon" type="image/png"/>
