@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.ibm-plex-mono-thin {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.ibm-plex-mono-extralight {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.ibm-plex-mono-light {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.ibm-plex-mono-regular {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ibm-plex-mono-medium {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.ibm-plex-mono-semibold {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.ibm-plex-mono-bold {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.ibm-plex-mono-thin-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.ibm-plex-mono-extralight-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.ibm-plex-mono-light-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.ibm-plex-mono-regular-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.ibm-plex-mono-medium-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.ibm-plex-mono-semibold-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.ibm-plex-mono-bold-italic {
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+body
+{
+    background-color: #BEC5AD;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 300;
+    color: #232E21;
+}
+
+main
+{
+    text-align: center;
+    align-items: center;
+    row-gap: 1rem;
+    max-width: 700px;
+    font-size: 18px;
+    margin: 0 auto;
+    padding: 0 1rem; 
+    line-height: 1.8;
+}
+main a {
+    text-decoration: none;
+}
+
+footer
+{
+    text-align: center;
+}
+
+
+.nav-bar
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    gap: 20px;
+
+}
+.nav-bar nav
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    gap: 20px;
+    font-weight: 200;
+}
+.nav-bar h1
+{
+    font-weight: 400;
+    text-decoration: none;
+}
+.nav-bar a
+{
+    text-decoration: none;
+}
+
+:visited
+{
+    color: #232E21;
+    text-decoration: none;
+}
+:link
+{
+    color: #232E21;
+    text-decoration: none;
+}
+
+hr {
+    border: none;
+    text-align: center;
+    margin: 3rem auto;
+    position: relative;
+    height: 1.5em; /* reserve vertical space */
+}
+hr::before {
+    content: "• • •";
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    color: #232E21;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.search__input {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #A4B494;
+  border: none;
+  color: #232E21;
+  padding: 0.5rem 0.5rem;
+  border-radius: 30px;
+  width: 15em;
+  transition: none;
+  margin-right: -2rem;
+}
+
+.search__input:hover, .search__input:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+.search__input:focus {
+  outline: none;
+  background-color: #A4B494;
+}
+
+.search__input::-webkit-input-placeholder {
+  font-weight: 100;
+  color: #232E21;
+}
+
+.search__input:focus + .search__button {
+  background-color: #A4B494;
+}
+
+.search__button {
+  border: none;
+  background-color: #A4B494;
+  margin-top: .1em;
+  border-radius: 15px;
+}
+
+.search__button:hover {
+  cursor: pointer;
+}
+
+.search__icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: #232E21;
+}
+
+.post-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    gap: 100px;
+    font-weight: 200;
+}
+.post-nav a {
+    text-decoration: none
+}
+
+.search__icon {
+    height: 20px;
+}
+
+:any-link {
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.3 ease;
+}
+
+:any-link:hover {
+    transform: skewX(-10deg);
+    font-weight: 600;
+}
+
+.nav-bar .icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+
+    .nav-bar .icon {
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        top: 2.5rem;
+        font-size: larger;
+        right: 1rem;
+    }
+
+    .nav-bar nav,
+    .nav-bar .search {
+        display: none;
+        width: 100%;
+    }
+
+    .nav-bar.responsive nav,
+    .nav-bar.responsive .search {
+        display: flex;
+    }
+
+    .nav-bar.responsive nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-bar.nav-bar.responsive nav p {
+        line-height: 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-bar {
+        position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+
+    .search form {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .search__input {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .search__button {
+        flex-shrink: 0;
+    }
+}

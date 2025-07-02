@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>err 404</title>
+    <link href="/style/text-page.css" rel="stylesheet" />
+    <link href="/assets/fav.PNG" rel="icon" type="image/png"/>
+</head>
+<body>
+    <header>
+        <div class="nav-bar" id="myNavBar">
+            <h1><a href="/">mukund shyam</a></h1>
+            
+            <nav>
+                <p><a href="/about">about</a></p>
+                <p><a href="/posts">writing</a></p>
+                <p><a href="/gallery">photos</a></p>
+                <p><a href="/music">music</a></p>
+                <p><a href="/contact">contact</a></p>
+            </nav>
+            
+            <div class="search">
+                <form action="/search.html" method="GET" class="search">
+                    <input type="text" class="search__input" name="q" placeholder="search" id="searchInput">
+                    <button class="search__button" id="searchButton">
+                            <img src="/assets/search.png" alt="search icon" class="search__icon">
+                    </button>
+                </form>
+            </div>
+            
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <img src="/assets/menu.png" alt="Menu" width="35px">
+            </a>
+        
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myNavBar");
+                x.classList.toggle("responsive");
+            }
+        </script>
+    </header>
+    <main>
+        <h2 class="title">err 404</h2>
+        <hr>
+<h3>page not found</h3>
+<p>i'm sorry, this page does not exist.
+<a href="/">go home</a></p>
+
+    </main>
+    <footer>
+        <hr />
+        <p>&copy mukund shyam 2025</p>
+    </footer>
+    
+</body>
+</html>

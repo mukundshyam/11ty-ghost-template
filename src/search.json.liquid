@@ -1,0 +1,15 @@
+---
+permalink: /search.json
+content-type: application/json
+eleventyExcludeFromCollections: true
+---
+[
+  {% for post in posts %}
+    {
+      "title": {{ post.title | jsonify }},
+      "url": "/posts/{{ post.slug }}/",
+      "content": {{ post.html | strip_html | strip_newlines | jsonify }},
+      "tags": {{ post.tags | map: "name" | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

@@ -1,0 +1,74 @@
+---
+layout: layout.html
+title: search
+permalink: search.html
+stylesheet: /style/posts.css
+---
+
+<div id="searchResults">Loading...</div>
+<ul class="search-results">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js"></script>
+    <script type="module">
+        function normalize(str = "") {
+            return str
+            .toLowerCase()
+            .replace(/[\u2018\u2019]/g, "'")     // smart apostrophes → '
+            .replace(/[\u201C\u201D]/g, '"')     // smart quotes → "
+            .replace(/\u2013|\u2014/g, '-')      // dashes → -
+            .replace(/\s+/g, ' ')                // normalize spaces
+            .replace(/\n/g, ' ')                 // newlines → space
+            .replace(/\s+/g, ' ')                // collapse multiple spaces
+            .trim();
+        }   
+
+        const params = new URLSearchParams(window.location.search);
+        const query = normalize(params.get("q") || "");
+        const output = document.getElementById("searchResults");
+
+        async function loadSearchData() {
+            if (!query) {
+                output.innerHTML = "<div class='no-search'><p>no search query provided. </p></div>";
+                return;
+            }
+            
+            try {
+                const response = await fetch("/search.json")
+                const data = await response.json();
+
+                const fuse = new Fuse(data, {
+                    keys: ['title', 'tags', 'content'],
+                    threshold: 0.6,
+                    includeScore: true,
+                    isCaseSensitive: false,
+                    shouldSort: true,
+                    findAllMatches: true,
+                    getFn: (obj, path) => {
+                        const raw = Fuse.config.getFn(obj, path);
+                        return typeof raw === "string" ? normalize(raw) : raw;
+                    }
+                });
+
+                const results = fuse.search(query);
+
+                if (results.length === 0) {
+                    output.innerHTML = "<div class='not-found'><p>no results found.</p></div>"
+                    return;
+                }
+
+                output.innerHTML = "";
+                for (const result of results) {
+                    const item = result.item;
+                    const div = document.createElement("div");
+                    div.innerHTML = `<div class="search-item"> <h4><a href="${item.url}">${item.title}</a></h4>
+                                    <p>${(item.content || "").slice(0, 150)}...</p></div>`;
+                    output.appendChild(div);
+                }
+            } catch (err) {
+                output.innerHTML = "<p>error loading search data.</p>";
+                console.error(err);
+            }
+        }
+
+        loadSearchData();
+    </script>
+</ul>

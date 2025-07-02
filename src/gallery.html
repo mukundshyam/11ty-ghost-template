@@ -1,0 +1,19 @@
+---
+layout: layout.html
+title: my photos
+---
+<head>
+    <link href="/style/gallery.css" rel="stylesheet"/>
+</head>
+
+<hr />
+<div class="gallery">
+  {% for image in collections.photoGallery %}
+    <figure class="gallery-item">
+        <img class="gallery-img" src="{{ image.url }}" alt="{{ image.filename }}" loading="lazy">
+        {% if captions[image.filename] %}
+            <figcaption class="gallery-caption">{{ captions[image.filename] }}</figcaption>
+        {% endif %}
+    </figure>
+  {% endfor %}
+</div>

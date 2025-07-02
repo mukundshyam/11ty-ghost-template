@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link href="/style/post-style.css" rel="stylesheet" />
+    <link href="/assets/fav.PNG" rel="icon" type="image/png"/>
+</head>
+<body>
+    <header>
+        <div class="nav-bar" id="myNavBar">
+            <h1><a href="/">your name</a></h1>
+            
+            <nav>
+                <p><a href="/about">about</a></p>
+                <p><a href="/posts">writing</a></p>
+                <p><a href="/gallery">photos</a></p>
+                <p><a href="/music">music</a></p>
+                <p><a href="/contact">contact</a></p>
+            </nav>
+            
+            <div class="search">
+                <form action="/search.html" method="GET" class="search">
+                    <input type="text" class="search__input" name="q" placeholder="search" id="searchInput">
+                    <button class="search__button" id="searchButton">
+                            <img src="/assets/search.png" alt="search icon" class="search__icon">
+                    </button>
+                </form>
+            </div>
+            
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <img src="/assets/menu.png" alt="Menu" width="35px">
+            </a>
+        
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myNavBar");
+                x.classList.toggle("responsive");
+            }
+        </script>
+    </header>
+
+    <main>
+        <article>
+            {% if post.feature_image %}
+            <div class="post-featured-image">
+                <img src="{{ post.feature_image }}" alt="{{ post.title }}">
+            </div>
+            {% endif %}
+            <h2>{{ post.title }}</h2>
+            <h3>Author: {{ post.primary_author.name }}</h3>
+            <h3>Published on: {{ post.published_at | date: "%d %m %Y"}}</h3>
+            <hr />
+            {%if post.tags.size > 0 %}
+                <ul class="tags">
+                    {% for tag in post.tags %}
+                        <li><p>#{{ tag.name }}</p></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <div>{{ post.html | raw }}</div>
+            <hr />
+        </article>
+
+        <a href="javascript:void(0)" onclick="copyLink()" class="share-menu">
+            <img src="/assets/copy.png" alt="Copy link" width="40" height="40">
+            <p>copy link</p>
+        </a>
+        <script>
+            function copyLink() {
+            navigator.clipboard.writeText(window.location.href)
+                .then(() => alert("Link copied to clipboard!"))
+                .catch(err => console.error("Copy failed: ", err));
+            }
+        </script>
+            
+        <div class="subscription" style="min-height: 58px;max-width: 440px;margin: 0 auto;width: 100%">
+            <p class="subscription__text">Stay notified when new posts are released!</p>
+            <script class="subscription__box" src="https://cdn.jsdelivr.net/ghost/signup-form@~0.2/umd/signup-form.min.js" data-button-color="#FF1A75" data-button-text-color="#FFFFFF" data-site="http://localhost:2368/" data-locale="en" async></script>
+        </div>
+
+
+            
+        <div class="post-nav">
+            <p><a href="/posts">All posts</a></p>
+        </div>
+    </main>
+    
+    <footer>
+        <hr />
+        <p>&copy 2025</p>
+    </footer>
+</body>
+</html>
